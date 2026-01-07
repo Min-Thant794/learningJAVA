@@ -22,7 +22,7 @@ public class SelectionExercise5 {
 			System.out.println("Three digits in non-decreasing order: " + sd + td + fd);
 		} else if ((td < sd) && (sd < fd)) {
 			System.out.println("Three digits in non-decreasing order: " + td + sd + fd);
-		} else if ((td < fd) && (fd < sd)) {
+		} else {
 			System.out.println("Three digits in non-decreasing order: " + td + fd + sd);
 		}
 	}
