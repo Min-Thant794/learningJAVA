@@ -9,7 +9,7 @@ public class OneDArrayExercise15 {
     public static void userInput(int[] arr)
     {
         for(int i = 0; i < arr.length; i++) {
-
+            System.out.print("Enter ten numbers: ");
         }
     }
 }
