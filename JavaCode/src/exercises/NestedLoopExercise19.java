@@ -1,21 +1,22 @@
 package exercises;
 import static exercises.NestedLoopExercise1.getLines;
 
-public class NestedLoopExercise17 {
-    public static void main(String[] args){
+public class NestedLoopExercise19 {
+    public static void main(String[] args) {
         int lines = getLines();
         display(lines);
     }
 
     public static void display(int num) {
+
         for(int i = 0; i < num; i++) {
 
-            for(int j = 0; j <= i; j++) {
+            int value = 1;
 
-                if((i + j) % 2 == 0)
-                    System.out.print("1 ");
-                else
-                    System.out.print("0 ");
+            for(int j = 0; j <= i; j++) {
+                System.out.print(value + "  ");
+
+                value = value * (i - j) / (j + 1);
             }
 
             System.out.println();
