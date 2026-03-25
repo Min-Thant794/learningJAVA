@@ -31,4 +31,39 @@ public class TwoDArray3 {
             }
         }
     }
+
+    public static void display(int[][] a) {
+        System.out.println("The inputted data is: ");
+        for(int r = 0; r < a.length; r++) {
+
+            for(int c = 0; c < a[r].length; c++) {
+                System.out.print(a[r][c] + "\t");
+            }
+            System.out.println();
+        }
+    }
+
+    public static int total(int[][] a) {
+        int total = 0;
+        for(int r = 0; r < a.length; r++) {
+            for(int c = 0; c < a[r].length; c++) {
+                total += a[r][c];
+            }
+        }
+
+        return total;
+    }
+
+    public static int calculateCount(int[][] a) {
+        int count = 0;
+        for(int r = 0; r < a.length; r++) {
+            count += a[r].length;
+        }
+
+        return count;
+    }
+
+    public static float calculateAverage(int[][] a) {
+        return (float) total(a) / calculateCount(a);
+    }
 }
