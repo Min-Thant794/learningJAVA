@@ -1,8 +1,7 @@
 package exercises;
 
-public class TwoDArrayExercise18 {
-    public static void main (String[] args)
-    {
+public class TwoDArrayExercise19 {
+    public static void main(String[] args) {
         int row, col;
 
         do {
@@ -18,6 +17,7 @@ public class TwoDArrayExercise18 {
         TwoDArrayExercise10.setData(arr);
 
         System.out.println("Original array: ");
+
         for (int[] r : arr) {
             for (int c : r) {
                 System.out.print(c + " ");
@@ -25,17 +25,21 @@ public class TwoDArrayExercise18 {
             System.out.println();
         }
 
-        lowerTriangular(arr);
+        int sum = sumOfUpperTriangularArray(arr);
+        System.out.println("Sum: " + sum);
     }
 
-    public static void lowerTriangular(int[][] a) {
+    public static int sumOfUpperTriangularArray(int[][] a) {
+        int sum = 0;
+
         for (int r = 0; r < a.length; r++) {
             for (int c = 0; c < a[r].length; c++) {
-                if (c < r) {
-                    System.out.print(a[r][c] + " ");
+                if (c > r) {
+                    sum += a[r][c];
                 }
             }
-            System.out.println();
         }
+
+        return sum;
     }
 }
