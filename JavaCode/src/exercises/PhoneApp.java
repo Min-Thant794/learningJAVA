@@ -7,15 +7,15 @@ public class PhoneApp {
 
     public static void main (String[] args) {
         Phone p1 = new Phone("09785809883", "Min Thant Tun", "GSM");
-        Phone p2 = new Phone("85025446", "Timmy", "CDMA");
+        //Phone p2 = new Phone("85025446", "Timmy", "CDMA");
 
+        p1.display();
         int second;
         System.out.print("Call duration in second: ");
         second = sc.nextInt();
         p1.phoneCall(second);
 
-        p1.display();
-        p2.display();
+        //p2.display();
 
         System.out.println("Number of phone numbers: " + Phone.getNoOfPhone());
     }
