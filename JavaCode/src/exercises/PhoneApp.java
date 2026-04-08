@@ -10,7 +10,7 @@ public class PhoneApp {
         Phone p2 = new Phone("85025446", "Timmy", "CDMA");
 
         int second;
-        System.out.print("Enter second: ");
+        System.out.print("Call duration in second: ");
         second = sc.nextInt();
         p1.phoneCall(second);
 
