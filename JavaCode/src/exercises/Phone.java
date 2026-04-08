@@ -2,15 +2,15 @@ package exercises;
 
 public class Phone {
     private String phoneNumber, owner, type;
-    private int bill;
+    private double bill;
     private boolean swe;
     private static int noOfPhone;
 
-    public Phone (String phoneNumber, String owner, String type) {
+    public Phone(String phoneNumber, String owner, String type) {
         this(phoneNumber, owner, type, 300, false);
     }
 
-    public Phone (String phoneNumber, String owner, String type, int bill, boolean swe) {
+    public Phone(String phoneNumber, String owner, String type, double bill, boolean swe) {
         this.phoneNumber = phoneNumber;
         this.owner = owner;
         this.type = type;
@@ -19,19 +19,19 @@ public class Phone {
         noOfPhone++;
     }
 
-    public void sweOn(boolean swe) {
-        this.swe = swe;
+    public void sweOn() {
+        this.swe = true;
     }
 
-    public void sweOff(boolean swe) {
-        this.swe = swe;
+    public void sweOff() {
+        this.swe = false;
     }
 
-    public int getBill() {
+    public double getBill() {
         return bill;
     }
 
-    public void setBill (int bill) {
+    public void setBill(double bill) {
         this.bill = bill;
     }
 
@@ -39,52 +39,52 @@ public class Phone {
         return phoneNumber;
     }
 
-    public void setPhoneNumber (String PhoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getOwner () {
+    public String getOwner() {
         return owner;
     }
 
-    public void setOwner (String owner) {
+    public void setOwner(String owner) {
         this.owner = owner;
     }
 
-    public String getType () {
+    public String getType() {
         return type;
     }
 
-    public void setType (String type) {
+    public void setType(String type) {
         this.type = type;
     }
 
-    public static int getNoOfPhone () {
+    public static int getNoOfPhone() {
         return noOfPhone;
     }
 
-    public void phoneCall (int second) {
+    public void phoneCall(int second) {
         double min = second / 60.0;
-        double balance;
+        double cost;
 
         if (swe) {
-            balance = min / 13;
-            System.out.println("You have " + min + " minutes left and your remaining balance is: " + (getBill() - balance));
+            cost = min * 13;
         } else {
-            balance = min / 25;
-            System.out.println("You have " + min + " minutes left and your remaining balance is: " + (getBill() - balance));
+            cost = min * 25;
         }
+
+        bill -= cost;
+
+        System.out.println("Call duration: " + min + " minutes");
+        System.out.println("Call cost: " + cost);
+        System.out.println("Remaining balance: " + bill);
     }
 
-    public void display () {
+    public void display() {
         System.out.println("Phone Number: " + getPhoneNumber());
         System.out.println("Owner: " + getOwner());
         System.out.println("Type: " + getType());
         System.out.println("Bill: " + getBill());
-        if (swe) {
-            System.out.println("SWE Plan ON");
-        } else {
-            System.out.println("SWE Plan OFF");
-        }
+        System.out.println(swe ? "SWE Plan ON" : "SWE Plan OFF");
     }
 }

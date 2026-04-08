@@ -16,5 +16,7 @@ public class PhoneApp {
 
         p1.display();
         p2.display();
+
+        System.out.println("Number of phone numbers: " + Phone.getNoOfPhone());
     }
 }
